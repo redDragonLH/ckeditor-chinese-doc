@@ -1,2 +1,0 @@
-# CKEDITOR
-这是API入口点。整个CKEditor代码运行在这个对象下
