@@ -106,3 +106,55 @@ ELEMENT_MODE_APPENDTO : 数字  *<span style="border:1px solid #999">只读<span
 编辑器将在元素内部创建。
 
 默认为 `2`
+<hr>
+ELEMENT_MODE_INLINE : 数字  *<span style="border:1px solid #999">只读<span>*
+
+编辑器将被附加到该元素，并将其用作编辑块。
+
+默认为 `3`
+<hr>
+ELEMENT_MODE_NONE : 数字  *<span style="border:1px solid #999">只读<span>*
+
+编辑器没有关联的元素。
+
+默认为 `0`
+<hr>
+ELEMENT_MODE_REPLACE : 数字  *<span style="border:1px solid #999">只读<span>*
+
+该元素将被编辑器实例替换。
+
+默认为 `1`
+<hr>
+END : 数字  *<span style="border:1px solid #999">只读<span>*
+
+请参阅CKEDITOR.dom.range.checkBoundaryOfElement。
+
+默认为 `2`
+<hr>
+ENLARGE_BLOCK_CONTENTS : 数字  *<span style="border:1px solid #999">只读<span>*
+
+默认为 `2`
+<hr>
+ENLARGE_ELEMENT : 数字  *<span style="border:1px solid #999">只读<span>*
+
+默认为 `1`
+<hr>
+ENLARGE_INLINE : 数字  *<span style="border:1px solid #999">只读<span>*
+
+默认为 `4`
+<hr>
+ENLARGE_LIST_ITEM_CONTENTS : 数字  *<span style="border:1px solid #999">只读<span>*
+
+默认为 `3`
+<hr>
+ENTER_BR : 数字  *<span style="border:1px solid #999">只读<span>*
+
+与CKEDITOR.config.enterMode和CKEDITOR.config.shiftEnterMode配置设置一起使用，以使编辑器在使用Enter键时生成`<br>`标签。
+
+默认为 `2`
+<hr>
+ENTER_DIV : 数字  *<span style="border:1px solid #999">只读<span>*
+
+与CKEDITOR.config.enterMode和CKEDITOR.config.shiftEnterMode配置设置一起使用，以使编辑器在使用Enter键时生成`<div>`标签。
+
+默认为 `3`
