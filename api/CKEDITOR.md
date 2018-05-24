@@ -635,15 +635,16 @@ CKEditor安装目录的完整URL。可以通过设置名为`CKEDITOR_BASEPATH`�
 #### addTemplate( name, source ) → [template](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_template.html)
 添加一个名为[CKEDITOR.template](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_template.html)的实例，以便在所有编辑器中重用。如果已经定义了具有相同名称的模板，这将返回现有的模板。此外，它会触发“模板”事件以允许模板源自定义。
 ##### 参数
-  **name** : String
+<em style="margin-left:20px;"></em>  **name** : String
   
-  标识UI模板的名称。
+<em style="margin-left:40px;"></em>  标识UI模板的名称。
   
-  **source** : String
+<em style="margin-left:20px;"></em>  **source** : String
   
-  用于构建此模板的源字符串。
+<em style="margin-left:40px;"></em>  用于构建此模板的源字符串。
 
 ##### 返回
-[template](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_template.html)
+<em style="margin-left:20px;"></em>[template](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_template.html)
 
-  创建的模板实例。
+<em style="margin-left:40px;"></em>  创建的模板实例。
+<hr>
