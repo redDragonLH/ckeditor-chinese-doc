@@ -608,3 +608,42 @@ CKEditor安装目录的完整URL。可以通过设置名为`CKEDITOR_BASEPATH`�
       alert( CKEDITOR.version ); // e.g. 'CKEditor 3.4.1'
     
 默认为 '%VERSION%'
+
+## 方法
+#### add(editor)
+将编辑器实例添加到全局CKEDITOR对象。该功能 **主要供内部使用**。
+
+##### 参数
+
+  **editor** : [editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)
+  
+  要添加的编辑器实例
+<hr>
+#### addCss( css )
+添加要附加到编辑器文档的CSS规则。这种方法主要被插件用来将自定义样式添加到编辑器文档中。对于基本内容样式，应该使用contents.css文件。
+
+**注意**：应该在创建编辑器实例之前调用该函数。
+
+      // Add styles for all headings inside editable contents.
+      CKEDITOR.addCss( '.cke_editable h1,.cke_editable h2,.cke_editable h3 { border-bottom: 1px dotted red }' );
+
+##### 参数
+  **css** : String
+  
+    要添加的样式规则。 [CKEDITOR.config.contentsCss](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_config.html#cfg-contentsCss)
+<hr>
+#### addTemplate( name, source ) → [template](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_template.html)
+添加一个名为[CKEDITOR.template](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_template.html)的实例，以便在所有编辑器中重用。如果已经定义了具有相同名称的模板，这将返回现有的模板。此外，它会触发“模板”事件以允许模板源自定义。
+##### 参数
+  **name** : String
+  
+  标识UI模板的名称。
+  
+  **source** : String
+  
+  用于构建此模板的源字符串。
+
+##### 返回
+[template](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_template.html)
+
+  创建的模板实例。
