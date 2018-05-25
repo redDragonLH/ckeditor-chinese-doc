@@ -1,0 +1,14 @@
+{ 
+  "gitbook": ">=3.2.0" ,
+  "description": "ckeditor chinese doc",
+  "language": "zh-cn" ,
+  "styles": {},
+  "plugins": [],
+  "structure": {},
+  "variables": {
+    "ck": "ckeditor",
+    "20px": "<em style='margin-left:20px;'></em>",
+    "40px": "<em style='margin-left:40px;'></em>"
+  }
+  
+}

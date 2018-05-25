@@ -644,7 +644,8 @@ CKEditor安装目录的完整URL。可以通过设置名为`CKEDITOR_BASEPATH`�
 <em style="margin-left:40px;"></em>  用于构建此模板的源字符串。
 
 ##### 返回
-<em style="margin-left:20px;"></em>[template](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_template.html)
+{{book.20px}}[template](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_template.html)
 
-<em style="margin-left:40px;"></em>  创建的模板实例。
+  {{book.40px}}创建的模板实例。
+
 <hr>
