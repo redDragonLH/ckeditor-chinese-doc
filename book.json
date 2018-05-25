@@ -7,8 +7,8 @@
   "structure": {},
   "variables": {
     "ck": "ckeditor",
-    "20px": "<em style='margin-left:20px;'></em>",
-    "40px": "<em style='margin-left:40px;'></em>"
+    "one": "&nbsp;&nbsp;&nbsp;&nbsp;",
+    "tow": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
   }
   
 }
