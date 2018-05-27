@@ -35,9 +35,9 @@
 
 **ALT** : 数字  *<span style="border:1px solid #999">只读<span>*
 
-ALT键（0x440000）。
+ALT键（0x4tow000）。
 
-默认为 `0x440000`
+默认为 `0x4tow000`
 
 <hr>
 **CTRL** : 数字  *<span style="border:1px solid #999">只读<span>*
@@ -387,9 +387,9 @@ CTRL键（0x110000）。
 <hr>
 **SHIFT** : 数字  *<span style="border:1px solid #999">只读<span>*
 
-SHIFT键（0x220000）。
+SHIFT键（0x2one000）。
 
-默认为 `0x220000`
+默认为 `0x2one000`
 <hr>
 **SHRINK_ELEMENT** : 数字  *<span style="border:1px solid #999">只读<span>*
 
@@ -608,3 +608,262 @@ CKEditor安装目录的完整URL。可以通过设置名为`CKEDITOR_BASEPATH`�
       alert( CKEDITOR.version ); // e.g. 'CKEditor 3.4.1'
     
 默认为 '%VERSION%'
+
+## 方法
+#### add(editor)
+将编辑器实例添加到全局CKEDITOR对象。该功能 **主要供内部使用**。
+
+##### 参数
+
+  **editor** : [editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)
+  
+  要添加的编辑器实例
+<hr>
+#### addCss( css )
+添加要附加到编辑器文档的CSS规则。这种方法主要被插件用来将自定义样式添加到编辑器文档中。对于基本内容样式，应该使用contents.css文件。
+
+**注意**：应该在创建编辑器实例之前调用该函数。
+
+      // Add styles for all headings inside editable contents.
+      CKEDITOR.addCss( '.cke_editable h1,.cke_editable h2,.cke_editable h3 { border-bottom: 1px dotted red }' );
+
+##### 参数
+  **css** : String
+  
+    要添加的样式规则。 [CKEDITOR.config.contentsCss](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_config.html#cfg-contentsCss)
+<hr>
+#### addTemplate( name, source ) → [template](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_template.html)
+添加一个名为[CKEDITOR.template](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_template.html)的实例，以便在所有编辑器中重用。如果已经定义了具有相同名称的模板，这将返回现有的模板。此外，它会触发“模板”事件以允许模板源自定义。
+##### 参数
+<em style="margin-left:one;"></em>  **name** : String
+  
+<em style="margin-left:tow;"></em>  标识UI模板的名称。
+  
+<em style="margin-left:one;"></em>  **source** : String
+  
+<em style="margin-left:tow;"></em>  用于构建此模板的源字符串。
+
+##### 返回
+{{book.one}}[template](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_template.html)
+
+  {{book.tow}}创建的模板实例。
+
+<hr>
+#### appendTo( element, [ config ], [ data ] ) → [editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)
+在特定DOM元素的末尾创建一个新的编辑器实例
+
+      <!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="utf-8">
+                <title>CKEditor</title>
+                <!-- Make sure the path to CKEditor is correct. -->
+            <script src="/ckeditor/ckeditor.js"></script>
+        </head>
+        <body>
+            <div id="editorSpace"></div>
+            <script>
+                CKEDITOR.appendTo( 'editorSpace' );
+            </script>
+        </body>
+      </html>
+
+##### 参数
+
+{{ book.one }}element : Object | String  
+
+  {{ book.tow }} DOM元素，其ID或名称。
+  
+{{ book.one }} [ config ] : Object
+
+  {{ book.tow }} 要应用于此编辑器实例的特定配置。此处设置的配置将覆盖全局CKEditor设置（请参阅[CKEDITOR.config](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_config.html)）。
+  
+{{ book.one }} [ data ] : String
+
+  {{ book.tow }} 自3.3起。该实例的初始值。
+  
+##### 返回
+{{ book.one }}[editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)
+
+  {{ book.tow }}编辑器实例已创建。
+<hr>
+####  domReady()
+指定一个函数在DOM完全加载时执行。
+
+如果在DOM初始化后调用，则传入的函数将立即执行。
+<hr>
+#### editorConfig( config )
+函数调用加载可以修改编辑器实例配置（[CKEDITOR.editor.config](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html#property-config)）的自定义配置文件。它通常在可以包含开发人员定义的设置的自定义配置文件中定义。
+
+      // This is supposed to be placed in the config.js file.
+      CKEDITOR.editorConfig = function( config ) {
+          // Define changes to default configuration here. For example:
+          config.language = 'fr';
+          config.uiColor = '#AADC6E';
+      };
+
+#####参数
+{{ book.one }} config : [config](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_config.html)
+
+  {{ book.tow }}包含为[CKEDITOR.editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)实例定义的设置的配置对象，直至此函数调用。请注意，并非所有设置可能仍然可用。 详细信息请参阅 [配置载入顺序](https://docs.ckeditor.com/ckeditor4/latest/https://docs.ckeditor.com/ckeditor4/docs/guide/dev_configuration.html)。
+<hr>
+#### error( errorCode, [ additionalData ] )
+
+错误报告功能。 如果[错误程度](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#property-verbosity)设置了[VERBOSITY_ERROR](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#property-VERBOSITY_ERROR)标志，则会将类型设置为错误的[日志](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#event-log)事件触发。 触发的事件也包含提供的 `errorCode`和`additionalData`。
+
+##### 参数
+{{ book.one }}errorCode : String
+
+  {{ book.tow }}描述报告问题的错误代码。
+
+{{ book.one }} [ additionalData ] : Object
+
+  {{ book.tow }}与报告的问题相关的其他数据。
+<hr>
+#### getCss() → String
+  返回一个字符串，其中包含传递给[addCss](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#method-addCss)方法的所有CSS规则。
+  
+##### 返回
+{{ book.one }}字符串
+
+  {{ book.tow }}包含CSS规则的字符串。
+<hr>
+#### getTemplate( name )
+检索使用addTemplate创建的已定义模板。
+##### 参数
+{{ book.one }}name : String
+
+  {{ book.tow }}模板名称。
+<hr>
+#### getUrl( resource ) → String
+获取CKEditor资源的完整URL。默认情况下，该函数返回的URL包含设置为时间戳值的查询字符串参数（“t”）。
+
+可以通过设置一个名为的全局变量来提供该函数的自定义实现CKEDITOR_GETURL。这个全局变量必须在编辑器脚本加载之前设置。如果自定义实现返回nothing（==null），则使用默认实现。
+
+      // e.g. 'http://www.example.com/ckeditor/skins/default/editor.css?t=87dm'
+      alert( CKEDITOR.getUrl( 'skins/default/editor.css' ) );
+
+      // e.g. 'http://www.example.com/skins/default/editor.css?t=87dm'
+      alert( CKEDITOR.getUrl( '/skins/default/editor.css' ) );
+
+      // e.g. 'http://www.somesite.com/skins/default/editor.css?t=87dm'
+      alert( CKEDITOR.getUrl( 'http://www.somesite.com/skins/default/editor.css' ) );
+
+#####参数
+{{ book.one }} resource : String
+  
+  {{ book.tow }} 我们想要获取完整网址的资源。它可能是完整的，绝对的或相对的URL。
+#####返回
+{{ book.one }} **String**
+
+  {{ book.tow }}完整的网址。
+<hr>
+#### inline( element, [ instanceConfig ] ) → editor
+将contenteditable设置为属性的DOM元素true转换为CKEditor实例。检查[CKEDITOR.dtd.$editable ](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dtd.html#property-S-editable)的允许元素名称列表。
+
+注意：如果启用了内联编辑的DOM元素没有contenteditable设置为的属性true，编辑器将以只读模式启动。
+
+    <div contenteditable="true" id="content">...</div>
+    ...
+    CKEDITOR.inline( 'content' );
+    
+也可以从`<textarea>`元素创建一个内联编辑器。 如果这样做，将在`<textarea>`元素之后直接创建具有可编辑内容的额外`<div>`元素，并且`<textarea>`元素将被隐藏。    
+##### 参数
+{{ book.one }} **element** : Object | String
+
+  {{ book.tow }} DOM元素或其ID。
+
+{{ book.one }} **[ instanceConfig ]** : Object
+
+  {{ book.tow }}要应用于此编辑器实例的特定配置。请参阅[CKEDITOR.config](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_config.html)。
+<hr>
+#### inlineAll()
+  调用contenteditable属性设置为true的所有页面元素。
+<hr>
+#### loadFullCore()
+如果只加载了基本代码（ckeditor_basic.js），则强制执行完整的CKEditor核心代码。这种方法在第一次调用时自毁（设置为 `undefined`）
+
+      // Check if the full core code has been loaded and load it.
+      if ( CKEDITOR.loadFullCore )
+          CKEDITOR.loadFullCore();
+    
+<hr>
+#### replace( element, [ config ] ) → editor
+用CKEditor实例替换`<textarea>`或DOM元素（`<div>`）。 对于textareas，编辑器中的初始值将是textarea值。 对于DOM元素，将使用它们的`innerHTML`。 建议仅使用`<textarea>`和`<div>`元素。
+
+      <textarea id="myfield" name="myfield"></textarea>
+      ...
+      CKEDITOR.replace( 'myfield' );
+
+      var textarea = document.body.appendChild( document.createElement( 'textarea' ) );
+      CKEDITOR.replace( textarea );
+      
+##### 参数
+{{book.one}} **element** : Object | String
+
+  {{book.tow}}DOM元素（textarea），其ID或名称。
+      
+{{book.one}} **[ config ]** : Object
+
+  {{book.tow}}要应用于此编辑器实例的特定配置。此处设置的配置将覆盖全局CKEditor设置（请参阅[CKEDITOR.config](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_config.html)）。
+#####返回
+{{book.one}}**[editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)**
+
+  {{book.tow}}编辑器实例已创建。
+<hr>
+#### replaceAll( [ className ], [ evaluator ] )
+`<textarea>`用编辑器实例替换文档中所有可用的元素。
+
+      // Replace all <textarea> elements in the page.
+      CKEDITOR.replaceAll();
+
+      // Replace all <textarea class="myClassName"> elements in the page.
+      CKEDITOR.replaceAll( 'myClassName' );
+
+      // Selectively replace <textarea> elements, based on a custom evaluation function.
+      CKEDITOR.replaceAll( function( textarea, config ) {
+          // A function that needs to be evaluated for the <textarea>
+          // to be replaced. It must explicitly return "false" to ignore a
+          // specific <textarea>.
+          // You can also customize the editor instance by having the function
+          // modify the "config" parameter.
+      } );
+
+      // Full page example where three <textarea> elements are replaced.
+      <!DOCTYPE html>
+      <html>
+          <head>
+              <meta charset="utf-8">
+              <title>CKEditor</title>
+              <!-- Make sure the path to CKEditor is correct. -->
+              <script src="/ckeditor/ckeditor.js"></script>
+          </head>
+          <body>
+              <textarea name="editor1"></textarea>
+              <textarea name="editor2"></textarea>
+              <textarea name="editor3"></textarea>
+              <script>
+                  // Replace all three <textarea> elements above with CKEditor instances.
+                  CKEDITOR.replaceAll();
+              </script>
+          </body>
+      </html>
+
+##### 参数
+{{book.one}}**[ className ]** : String
+
+  {{book.tow}}在`<textarea>`类名。
+
+{{book.one}} **[ evaluator ]** : Function
+  {{book.tow}}函数必须返回`true`才能用编辑器替换`<textarea>`。 如果函数返回`false`，则`<textarea>`元素将不会被替换。
+<hr>
+#### warn( errorCode, [ additionalData ] )
+警告报告功能。 当设置了[VERBOSITY_WARN](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#property-VERBOSITY_WARN)标志时，它会触发类型设置为警告的[日志](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#event-log)事件。 Fired事件包含了也提供了errorCode和additionalData。
+##### 参数
+{{book.one}} **errorCode** : String
+
+  {{book.tow}}描述报告问题的错误代码。
+
+{{book.one}} **[ additionalData ]** : Object
+
+  {{book.tow}}与报告的问题相关的其他数据。
