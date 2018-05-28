@@ -8,7 +8,8 @@
   "variables": {
     "ck": "ckeditor",
     "one": "&nbsp;&nbsp;&nbsp;&nbsp;",
-    "tow": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+    "tow": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+    "thre": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
   }
   
 }
