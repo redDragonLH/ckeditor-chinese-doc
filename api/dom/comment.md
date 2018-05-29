@@ -40,15 +40,79 @@ constructor( comment, [ ownerDocument ] ) → comment
 
 创建一个评论类实例。
 
-** 参数 **
+#### {{book.one}}参数
 
-comment：对象| 字符串
+{{book.tow}} **comment** ：对象| 字符串
 
-[ownerDocument]文档
+{{book.tow}}[ownerDocument] : [文档](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_document.html)
+
 在创建新节点的情况下将包含节点的文档。 默认为当前文档。
 
 ** 返回 **
 
 comment
 
-**覆盖**：CKEDITOR.dom.node.constructor
+覆盖：[CKEDITOR.dom.node.constructor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html#method-constructor)
+<hr>
+### appendTo( element ) → [element](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_element.html)
+使此节点成为另一个元素的子节点。
+
+    var p = new CKEDITOR.dom.element( 'p' );
+    var strong = new CKEDITOR.dom.element( 'strong' );
+    strong.appendTo( p );
+    
+#### 参数
+
+{{book.one}}**element** : [element](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_element.html)
+
+{{book.tow}} 此节点将被追加到的目标元素。
+
+#### Returns
+{{book.one}} [element](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_element.html)
+
+{{book.tow}} 目标元素。
+<hr>
+### capture()
+在支持目标上的捕获阶段下注册事件处理程序。
+<hr>
+### clearCustomData()
+删除存储在此对象中的任何数据。 为了避免内存泄漏，我们必须确保在不再需要对象之后没有剩余的引用。
+<hr>
+### clone( [ includeChildren ], [ cloneId ] ) → node
+克隆这个节点
+
+**注意**：由{[setCustomData](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html#method-setCustomData)}设置的值在克隆中不可用。
+
+#### 参数
+{{book.one}} **[ includeChildren ]** : Boolean
+
+  {{book.tow}}如果为 `true`，则所有节点的子节点将被递归克隆。
+  
+  {{book.tow}}默认为 `false`
+  
+{{book.one}} [ cloneId ] : Boolean
+
+  {{book.tow}} ID属性是否应该被克隆。
+  
+  {{book.tow}}默认为 `false`。
+#### 返回
+  {{book.one}} [node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)
+  
+  {{book.tow}} 克隆的节点
+<hr>
+### define( name, meta )
+预定义特定事件名称的一些内部属性。
+#### 参数
+{{book.one}} **name** :string
+
+  {{book.tow}} 事件名称
+
+{{book.one}} **meta** : Object
+
+  {{book.tow}} 属性
+  
+  {{book.tow}} [ errorProof ]
+  
+  {{book.thre}}  事件触发是否应该捕获每个侦听器调用引发的错误。
+  
+  {{book.thre}} 默认为 `false`
