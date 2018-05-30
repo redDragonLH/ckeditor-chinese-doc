@@ -867,3 +867,146 @@ CKEditor安装目录的完整URL。可以通过设置名为`CKEDITOR_BASEPATH`�
 {{book.one}} **[ additionalData ]** : Object
 
   {{book.tow}}与报告的问题相关的其他数据。
+## 事件
+### ariaWidget( evt )
+ panel 添加到文档时触发。
+
+#### 参数
+{{book.one}}**evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
+#### 属性
+
+{{book.one}}**data** : Object
+
+  {{book.tow}}包裹面板的元素。
+
+<hr>
+### contentPreview( evt )
+执行preview命令时会触发事件，从而允许额外的数据操作。通过此事件，可以更改或修改要显示的预览窗口的原始HTML内容。
+
+#### 参数
+{{book.one}}**evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
+#### 属性
+{{book.one}}**editor** : [editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)
+
+{{book.tow}}这个编辑器实例。
+
+{{book.one}}**data** : Object
+
+{{book.tow}}属性
+
+{{book.tow}}**dataValue** : String
+
+{{book.tow}}{{book.one}}将进入预览的数据。
+<hr>
+### currentInstance( evt )
+[CKEDITOR.currentInstance](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#property-currentInstance)对象引用更改时触发。将焦点设置在页面中的不同编辑器实例时可能会发生这种情况。
+
+      var editor; // A variable to store a reference to the current editor.
+      CKEDITOR.on( 'currentInstance', function() {
+          editor = CKEDITOR.currentInstance;
+      } );
+      
+#### 参数
+{{book.one}}**evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
+<hr>
+### dialogDefinition( evt )
+
+当对话框定义即将用于创建对话框到编辑器实例中时触发事件。 此事件可以在创建定义之前自定义定义。
+
+请注意，仅在第一次打开特定对话框时调用此事件。 连续的调用将使用缓存的对话框，并且该事件不会被触发。
+
+#### 参数
+{{book.one}}**evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
+{{book.tow}}##### 属性
+{{book.tow}}**data** : [definition](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dialog_definition.html)
+
+{{book.one}}{{book.tow}}正在加载的对话框定义。
+
+{{book.tow}}**editor** : [editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)
+
+{{book.one}}{{book.tow}}将使用该对话框的编辑器实例。
+
+<hr>
+### instanceCreated( evt )
+事件在创建CKEDITOR实例时触发，但仍在初始化之前。要与完全初始化的实例进行交互，请改用 [instanceReady](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#event-instanceReady)事件。
+
+#### 参数
+{{book.one}}**evt** : eventInfo
+##### {{book.tow}}属性
+
+{{book.tow}}**editor** : [editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)
+
+{{book.thre}}已创建的编辑器实例。
+<hr>
+### instanceDestroyed( evt )
+当CKEDITOR实例被销毁时触发事件。
+
+#### 参数
+{{book.one}}**evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
+##### {{book.tow}}属性
+{{book.tow}}**editor** : [editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)
+
+{{book.thre}}编辑器实例已被销毁。
+<hr>
+### instanceLoaded( evt )
+当CKEDITOR实例的组件（配置，语言和插件）完全加载并初始化时触发事件。但是，编辑器将完全准备好在[instanceReady](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#event-instanceReady)上进行交互。
+
+#### 参数
+{{book.one}}**evt** : eventInfo
+##### {{book.tow}}属性
+
+{{book.tow}}**editor** : [editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)
+
+{{book.thre}}此编辑器实例已被加载。
+<hr>
+### instanceReady( evt )
+事件在创建CKEDITOR实例时触发，完全初始化并准备好进行交互。
+
+#### 参数
+{book.one}}**evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
+##### {{book.tow}} 属性
+{{book.tow}}**editor** : [editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)
+
+{{book.thre}}已创建的编辑器实例。
+<hr>
+### loaded( evt )
+CKEDITOR核心对象完全加载并准备好进行交互时触发。
+
+#### {{book.one}} 参数
+{{book.one}} **evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
+<hr>
+### log( evt )
+
+由[警告](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#method-warn)和[错误](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#method-error)方法引发。默认监听器日志向控制台提供信息。
+
+此事件可用于提供自定义错误/警告处理程序：
+
+        CKEDTIOR.on( 'log', function( evt ) {
+            // Cancel default listener.
+            evt.cancel();
+            // Log event data.
+            console.log( evt.data.type, evt.data.errorCode, evt.data.additionalData );
+        } );
+        
+#### {{book.one}} 参数
+{{book.tow}} **evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
+##### {{book.thre}} 属性
+{{book.thre}} **data** : Object
+###### {{book.thre}}{{book.one}}属性
+{{book.thre}}{{book.one}} **type** : String
+
+{{book.thre}}{{book.tow}}日志类型。可以是`error`或`warn`。
+
+{{book.thre}}{{book.one}} **errorCode** : String
+
+{{book.thre}}{{book.tow}} 描述报告问题的错误代码。
+
+{{book.thre}}{{book.one}} **[ additionalData ]** : Object
+
+{{book.thre}}{{book.tow}}与此日志事件关联的其他数据。
+<hr>
+### reset( evt )
+最后一个实例被销毁时触发。此事件用于执行全局内存清理。
+
+#### {{book.one}} 参数
+{{book.tow}} **evt** :  [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
