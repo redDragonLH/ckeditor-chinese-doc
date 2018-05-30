@@ -871,6 +871,9 @@ CKEditor安装目录的完整URL。可以通过设置名为`CKEDITOR_BASEPATH`�
 ### ariaWidget( evt )
  panel 添加到文档时触发。
 
+      editor.fire( 'ariaWidget', evt );
+
+
 #### 参数
 {{book.one}}**evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
 #### 属性
@@ -882,6 +885,10 @@ CKEditor安装目录的完整URL。可以通过设置名为`CKEDITOR_BASEPATH`�
 <hr>
 ### contentPreview( evt )
 执行preview命令时会触发事件，从而允许额外的数据操作。通过此事件，可以更改或修改要显示的预览窗口的原始HTML内容。
+
+      editor.on( 'contentPreview', function( evt ) {
+        
+      })
 
 #### 参数
 {{book.one}}**evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
@@ -917,7 +924,7 @@ CKEditor安装目录的完整URL。可以通过设置名为`CKEDITOR_BASEPATH`�
 
 #### 参数
 {{book.one}}**evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
-{{book.tow}}##### 属性
+##### {{book.tow}} 属性
 {{book.tow}}**data** : [definition](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dialog_definition.html)
 
 {{book.one}}{{book.tow}}正在加载的对话框定义。
@@ -930,6 +937,7 @@ CKEditor安装目录的完整URL。可以通过设置名为`CKEDITOR_BASEPATH`�
 ### instanceCreated( evt )
 事件在创建CKEDITOR实例时触发，但仍在初始化之前。要与完全初始化的实例进行交互，请改用 [instanceReady](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#event-instanceReady)事件。
 
+**注** 此事件无法在插件的init事件内触发，请注意 创建时间
 #### 参数
 {{book.one}}**evt** : eventInfo
 ##### {{book.tow}}属性
@@ -951,6 +959,7 @@ CKEditor安装目录的完整URL。可以通过设置名为`CKEDITOR_BASEPATH`�
 ### instanceLoaded( evt )
 当CKEDITOR实例的组件（配置，语言和插件）完全加载并初始化时触发事件。但是，编辑器将完全准备好在[instanceReady](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#event-instanceReady)上进行交互。
 
+**注**： 此事件也是不能再插件内部定义，没有在插件内发现，只在 `core`内部发现调用
 #### 参数
 {{book.one}}**evt** : eventInfo
 ##### {{book.tow}}属性
@@ -962,8 +971,20 @@ CKEditor安装目录的完整URL。可以通过设置名为`CKEDITOR_BASEPATH`�
 ### instanceReady( evt )
 事件在创建CKEDITOR实例时触发，完全初始化并准备好进行交互。
 
+      CKEDITOR.on('instanceReady',function( evt ){
+        
+      })
+      
+or
+  
+      editor.on('instanceReady',function( evt ){
+        
+      })
+
+还有 `once` 等触发方法
+
 #### 参数
-{book.one}}**evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
+{{book.one}}**evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
 ##### {{book.tow}} 属性
 {{book.tow}}**editor** : [editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html)
 
@@ -972,6 +993,10 @@ CKEditor安装目录的完整URL。可以通过设置名为`CKEDITOR_BASEPATH`�
 ### loaded( evt )
 CKEDITOR核心对象完全加载并准备好进行交互时触发。
 
+      CKEDITOR.on('loaded',function( evt ){
+        
+      })
+      
 #### {{book.one}} 参数
 {{book.one}} **evt** : [eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)
 <hr>

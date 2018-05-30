@@ -807,7 +807,8 @@ CKEDITOR.inline( &apos;content&apos; );
 <h2 id="&#x4E8B;&#x4EF6;">&#x4E8B;&#x4EF6;</h2>
 <h3 id="ariawidget-evt-">ariaWidget( evt )</h3>
 <p> panel &#x6DFB;&#x52A0;&#x5230;&#x6587;&#x6863;&#x65F6;&#x89E6;&#x53D1;&#x3002;</p>
-<h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
+<pre><code>  editor.fire( &apos;ariaWidget&apos;, evt );
+</code></pre><h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
 <p>&#xA0;&#xA0;&#xA0;&#xA0;<strong>evt</strong> : <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html" target="_blank">eventInfo</a></p>
 <h4 id="&#x5C5E;&#x6027;">&#x5C5E;&#x6027;</h4>
 <p>&#xA0;&#xA0;&#xA0;&#xA0;<strong>data</strong> : Object</p>
@@ -815,7 +816,10 @@ CKEDITOR.inline( &apos;content&apos; );
 <p><hr></p>
 <h3 id="contentpreview-evt-">contentPreview( evt )</h3>
 <p>&#x6267;&#x884C;preview&#x547D;&#x4EE4;&#x65F6;&#x4F1A;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#xFF0C;&#x4ECE;&#x800C;&#x5141;&#x8BB8;&#x989D;&#x5916;&#x7684;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x3002;&#x901A;&#x8FC7;&#x6B64;&#x4E8B;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x6539;&#x6216;&#x4FEE;&#x6539;&#x8981;&#x663E;&#x793A;&#x7684;&#x9884;&#x89C8;&#x7A97;&#x53E3;&#x7684;&#x539F;&#x59CB;HTML&#x5185;&#x5BB9;&#x3002;</p>
-<h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
+<pre><code>  editor.on( &apos;contentPreview&apos;, function( evt ) {
+
+  })
+</code></pre><h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
 <p>&#xA0;&#xA0;&#xA0;&#xA0;<strong>evt</strong> : <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html" target="_blank">eventInfo</a></p>
 <h4 id="&#x5C5E;&#x6027;">&#x5C5E;&#x6027;</h4>
 <p>&#xA0;&#xA0;&#xA0;&#xA0;<strong>editor</strong> : <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html" target="_blank">editor</a></p>
@@ -838,15 +842,16 @@ CKEDITOR.inline( &apos;content&apos; );
 <p>&#x5F53;&#x5BF9;&#x8BDD;&#x6846;&#x5B9A;&#x4E49;&#x5373;&#x5C06;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x5BF9;&#x8BDD;&#x6846;&#x5230;&#x7F16;&#x8F91;&#x5668;&#x5B9E;&#x4F8B;&#x4E2D;&#x65F6;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x3002; &#x6B64;&#x4E8B;&#x4EF6;&#x53EF;&#x4EE5;&#x5728;&#x521B;&#x5EFA;&#x5B9A;&#x4E49;&#x4E4B;&#x524D;&#x81EA;&#x5B9A;&#x4E49;&#x5B9A;&#x4E49;&#x3002;</p>
 <p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x4EC5;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x6253;&#x5F00;&#x7279;&#x5B9A;&#x5BF9;&#x8BDD;&#x6846;&#x65F6;&#x8C03;&#x7528;&#x6B64;&#x4E8B;&#x4EF6;&#x3002; &#x8FDE;&#x7EED;&#x7684;&#x8C03;&#x7528;&#x5C06;&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x7684;&#x5BF9;&#x8BDD;&#x6846;&#xFF0C;&#x5E76;&#x4E14;&#x8BE5;&#x4E8B;&#x4EF6;&#x4E0D;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#x3002;</p>
 <h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
-<p>&#xA0;&#xA0;&#xA0;&#xA0;<strong>evt</strong> : <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html" target="_blank">eventInfo</a>
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;##### &#x5C5E;&#x6027;
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<strong>data</strong> : <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dialog_definition.html" target="_blank">definition</a></p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;<strong>evt</strong> : <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html" target="_blank">eventInfo</a></p>
+<h5 id="&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;-&#x5C5E;&#x6027;">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x5C5E;&#x6027;</h5>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<strong>data</strong> : <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dialog_definition.html" target="_blank">definition</a></p>
 <p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x6B63;&#x5728;&#x52A0;&#x8F7D;&#x7684;&#x5BF9;&#x8BDD;&#x6846;&#x5B9A;&#x4E49;&#x3002;</p>
 <p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<strong>editor</strong> : <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html" target="_blank">editor</a></p>
 <p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x5C06;&#x4F7F;&#x7528;&#x8BE5;&#x5BF9;&#x8BDD;&#x6846;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x5B9E;&#x4F8B;&#x3002;</p>
 <p><hr></p>
 <h3 id="instancecreated-evt-">instanceCreated( evt )</h3>
 <p>&#x4E8B;&#x4EF6;&#x5728;&#x521B;&#x5EFA;CKEDITOR&#x5B9E;&#x4F8B;&#x65F6;&#x89E6;&#x53D1;&#xFF0C;&#x4F46;&#x4ECD;&#x5728;&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x524D;&#x3002;&#x8981;&#x4E0E;&#x5B8C;&#x5168;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5B9E;&#x4F8B;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF0C;&#x8BF7;&#x6539;&#x7528; <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#event-instanceReady" target="_blank">instanceReady</a>&#x4E8B;&#x4EF6;&#x3002;</p>
+<p><strong>&#x6CE8;</strong> &#x6B64;&#x4E8B;&#x4EF6;&#x65E0;&#x6CD5;&#x5728;&#x63D2;&#x4EF6;&#x7684;init&#x4E8B;&#x4EF6;&#x5185;&#x89E6;&#x53D1;&#xFF0C;&#x8BF7;&#x6CE8;&#x610F; &#x521B;&#x5EFA;&#x65F6;&#x95F4;</p>
 <h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
 <p>&#xA0;&#xA0;&#xA0;&#xA0;<strong>evt</strong> : eventInfo</p>
 <h5 id="&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x5C5E;&#x6027;">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x5C5E;&#x6027;</h5>
@@ -863,6 +868,7 @@ CKEDITOR.inline( &apos;content&apos; );
 <p><hr></p>
 <h3 id="instanceloaded-evt-">instanceLoaded( evt )</h3>
 <p>&#x5F53;CKEDITOR&#x5B9E;&#x4F8B;&#x7684;&#x7EC4;&#x4EF6;&#xFF08;&#x914D;&#x7F6E;&#xFF0C;&#x8BED;&#x8A00;&#x548C;&#x63D2;&#x4EF6;&#xFF09;&#x5B8C;&#x5168;&#x52A0;&#x8F7D;&#x5E76;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x7F16;&#x8F91;&#x5668;&#x5C06;&#x5B8C;&#x5168;&#x51C6;&#x5907;&#x597D;&#x5728;<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#event-instanceReady" target="_blank">instanceReady</a>&#x4E0A;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;</p>
+<p><strong>&#x6CE8;</strong>&#xFF1A; &#x6B64;&#x4E8B;&#x4EF6;&#x4E5F;&#x662F;&#x4E0D;&#x80FD;&#x518D;&#x63D2;&#x4EF6;&#x5185;&#x90E8;&#x5B9A;&#x4E49;&#xFF0C;&#x6CA1;&#x6709;&#x5728;&#x63D2;&#x4EF6;&#x5185;&#x53D1;&#x73B0;&#xFF0C;&#x53EA;&#x5728; <code>core</code>&#x5185;&#x90E8;&#x53D1;&#x73B0;&#x8C03;&#x7528;</p>
 <h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
 <p>&#xA0;&#xA0;&#xA0;&#xA0;<strong>evt</strong> : eventInfo</p>
 <h5 id="&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x5C5E;&#x6027;">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x5C5E;&#x6027;</h5>
@@ -871,15 +877,26 @@ CKEDITOR.inline( &apos;content&apos; );
 <p><hr></p>
 <h3 id="instanceready-evt-">instanceReady( evt )</h3>
 <p>&#x4E8B;&#x4EF6;&#x5728;&#x521B;&#x5EFA;CKEDITOR&#x5B9E;&#x4F8B;&#x65F6;&#x89E6;&#x53D1;&#xFF0C;&#x5B8C;&#x5168;&#x521D;&#x59CB;&#x5316;&#x5E76;&#x51C6;&#x5907;&#x597D;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;</p>
+<pre><code>  CKEDITOR.on(&apos;instanceReady&apos;,function( evt ){
+
+  })
+</code></pre><p>or</p>
+<pre><code>  editor.on(&apos;instanceReady&apos;,function( evt ){
+
+  })
+</code></pre><p>&#x8FD8;&#x6709; <code>once</code> &#x7B49;&#x89E6;&#x53D1;&#x65B9;&#x6CD5;</p>
 <h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
-<p>{book.one}}<strong>evt</strong> : <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html" target="_blank">eventInfo</a></p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;<strong>evt</strong> : <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html" target="_blank">eventInfo</a></p>
 <h5 id="&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;-&#x5C5E;&#x6027;">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x5C5E;&#x6027;</h5>
 <p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<strong>editor</strong> : <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html" target="_blank">editor</a></p>
 <p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x5DF2;&#x521B;&#x5EFA;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x5B9E;&#x4F8B;&#x3002;</p>
 <p><hr></p>
 <h3 id="loaded-evt-">loaded( evt )</h3>
 <p>CKEDITOR&#x6838;&#x5FC3;&#x5BF9;&#x8C61;&#x5B8C;&#x5168;&#x52A0;&#x8F7D;&#x5E76;&#x51C6;&#x5907;&#x597D;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x65F6;&#x89E6;&#x53D1;&#x3002;</p>
-<h4 id="&#xA0;&#xA0;&#xA0;&#xA0;-&#x53C2;&#x6570;">&#xA0;&#xA0;&#xA0;&#xA0; &#x53C2;&#x6570;</h4>
+<pre><code>  CKEDITOR.on(&apos;loaded&apos;,function( evt ){
+
+  })
+</code></pre><h4 id="&#xA0;&#xA0;&#xA0;&#xA0;-&#x53C2;&#x6570;">&#xA0;&#xA0;&#xA0;&#xA0; &#x53C2;&#x6570;</h4>
 <p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>evt</strong> : <a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html" target="_blank">eventInfo</a></p>
 <p><hr></p>
 <h3 id="log-evt-">log( evt )</h3>
@@ -950,7 +967,7 @@ CKEDITOR.inline( &apos;content&apos; );
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CKEDITOR","level":"1.2.1","depth":2,"next":{"title":"dom","level":"1.2.1.1","depth":3,"path":"api/dom/README.md","ref":"api/dom/README.md","articles":[{"title":"comment / 注释","level":"1.2.1.1.1","depth":4,"path":"api/dom/comment.md","ref":"api/dom/comment.md","articles":[]}]},"previous":{"title":"API doc","level":"1.2","depth":1,"path":"api/README.md","ref":"api/README.md","articles":[{"title":"CKEDITOR","level":"1.2.1","depth":2,"path":"api/CKEDITOR.md","ref":"api/CKEDITOR.md","articles":[{"title":"dom","level":"1.2.1.1","depth":3,"path":"api/dom/README.md","ref":"api/dom/README.md","articles":[{"title":"comment / 注释","level":"1.2.1.1.1","depth":4,"path":"api/dom/comment.md","ref":"api/dom/comment.md","articles":[]}]}]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"ck":"ckeditor","one":"&nbsp;&nbsp;&nbsp;&nbsp;","tow":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","thre":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"},"language":"zh-cn","gitbook":">=3.2.0","description":"ckeditor chinese doc"},"file":{"path":"api/CKEDITOR.md","mtime":"2018-05-28T05:21:44.003Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-29T04:59:38.454Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CKEDITOR","level":"1.2.1","depth":2,"next":{"title":"dom","level":"1.2.1.1","depth":3,"path":"api/dom/README.md","ref":"api/dom/README.md","articles":[{"title":"comment / 注释","level":"1.2.1.1.1","depth":4,"path":"api/dom/comment.md","ref":"api/dom/comment.md","articles":[]}]},"previous":{"title":"API doc","level":"1.2","depth":1,"path":"api/README.md","ref":"api/README.md","articles":[{"title":"CKEDITOR","level":"1.2.1","depth":2,"path":"api/CKEDITOR.md","ref":"api/CKEDITOR.md","articles":[{"title":"dom","level":"1.2.1.1","depth":3,"path":"api/dom/README.md","ref":"api/dom/README.md","articles":[{"title":"comment / 注释","level":"1.2.1.1.1","depth":4,"path":"api/dom/comment.md","ref":"api/dom/comment.md","articles":[]}]}]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"ck":"ckeditor","one":"&nbsp;&nbsp;&nbsp;&nbsp;","tow":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","thre":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"},"language":"zh-cn","gitbook":">=3.2.0","description":"ckeditor chinese doc"},"file":{"path":"api/CKEDITOR.md","mtime":"2018-05-30T06:06:53.100Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-30T06:04:06.983Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
