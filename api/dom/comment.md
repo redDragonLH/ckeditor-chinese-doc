@@ -111,8 +111,82 @@ comment
 
   {{book.tow}} 属性
   
-  {{book.tow}} [ errorProof ]
+  {{book.tow}} **[ errorProof ]**
   
   {{book.thre}}  事件触发是否应该捕获每个侦听器调用引发的错误。
   
   {{book.thre}} 默认为 `false`
+<hr>
+### equals( object ) → Boolean
+确定指定的对象是否等于当前对象。
+
+        var doc = new CKEDITOR.dom.document( document );
+        alert( doc.equals( CKEDITOR.document ) );   // true
+        alert( doc == CKEDITOR.document );          // false
+      
+#### 参数
+{{book.one}} **object** : Object
+
+{{book.tow}} 要与当前对象进行比较的对象。
+#### 返回
+{{book.one}} **Boolean** 
+
+{{book.tow}}  如果对象相等返回 `true`。
+<hr>
+### fire( eventName, [ data ], [ editor ] ) → Boolean | Object
+触发对象中的特定事件。此时调用所有已注册的侦听器。
+
+      someObject.on( 'someEvent', function() { ... } );
+      someObject.on( 'someEvent', function() { ... } );
+      someObject.fire( 'someEvent' );             // Both listeners are called.
+
+      someObject.on( 'someEvent', function( event ) {
+          alert( event.data );                    // 'Example'
+      } );
+      someObject.fire( 'someEvent', 'Example' );
+
+#### 参数
+{{book.one}} **eventName** : String
+
+{{book.tow}} 要触发的事件名称。
+
+{{book.one}} **[ data ]** : Object
+
+{{book.tow}}数据在调用侦听器时作为[CKEDITOR.eventInfo.data](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html#property-data)发送 。
+
+{{book.one}} **[ editor ]** : editor
+
+{{book.tow}} 调用侦听器时作为[CKEDITOR.eventInfo.editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html#property-editor)发送的编辑器实例 。
+
+#### 返回 
+{{book.one}} **Boolean | Object**
+
+{{book.tow}}指示事件将被取消的布尔值，或由其中一个侦听器返回的数据。
+
+<hr>
+### fireOnce( eventName, [ data ], [ editor ] ) → Boolean | Object
+
+触发对象中的特定事件，释放信号到该事件的所有侦听器。不能再次调用次特定事件
+
+      someObject.on( 'someEvent', function() { ... } );
+      someObject.fire( 'someEvent' );         // Above listener called.
+      someObject.fireOnce( 'someEvent' );     // Above listener called.
+      someObject.fire( 'someEvent' );         // No listeners called.
+
+#### 参数
+{{book.one}} **eventName** : String
+
+{{book.tow}} 要触发的事件名称。
+
+{{book.one}} **[ data ]** : Object
+
+{{book.tow}}数据在调用侦听器时作为[CKEDITOR.eventInfo.data](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html#property-data)发送 。
+
+{{book.one}} **[ editor ]** : editor
+
+{{book.tow}} 调用侦听器时作为[CKEDITOR.eventInfo.editor](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html#property-editor)发送的编辑器实例 。
+
+#### 返回 
+{{book.one}} **Boolean | Object**
+
+{{book.tow}}指示事件将被取消的布尔值，或由其中一个侦听器返回的数据。
