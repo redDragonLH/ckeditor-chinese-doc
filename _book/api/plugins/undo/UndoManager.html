@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>undo.image · GitBook</title>
+        <title>undo.UndoManager · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -45,10 +45,8 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="UndoManager.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="image.html" />
     
 
     </head>
@@ -164,7 +162,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1.2.1" data-path="image.html">
+        <li class="chapter " data-level="1.2.1.2.1" data-path="image.html">
             
                 <a href="image.html">
             
@@ -177,7 +175,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.2.2" data-path="UndoManager.html">
+        <li class="chapter active" data-level="1.2.1.2.2" data-path="UndoManager.html">
             
                 <a href="UndoManager.html">
             
@@ -235,7 +233,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >undo.image</a>
+        <a href="../../.." >undo.UndoManager</a>
     </h1>
 </div>
 
@@ -250,38 +248,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="ckeditorpluginsundoimage">CKEDITOR.plugins.undo.Image</h1>
-<p>&#x5305;&#x542B;&#x7F16;&#x8F91;&#x5668;&#x5185;&#x5BB9;&#x548C;&#x7279;&#x5B9A;&#x65F6;&#x95F4;&#x70B9;&#x7684;&#x5FEB;&#x7167;&#x3002;</p>
+                                <h1 id="ckeditorpluginsundoundomanager">CKEDITOR.plugins.undo.UndoManager</h1>
+<p>&#x91CD;&#x505A;/&#x64A4;&#x6D88;&#x529F;&#x80FD;&#x7684;&#x4E3B;&#x8981;&#x903B;&#x8F91;&#x3002;</p>
 <h2 id="&#x5C5E;&#x6027;">&#x5C5E;&#x6027;</h2>
-<h3 id="bookmarks--object--&#xA0;&#xA0;&#xA0;&#xA0;&#x53EA;&#x8BFB;">bookmarks : Object[]  &#xA0;&#xA0;&#xA0;&#xA0;<em><span style="border:1px solid #999">&#x53EA;&#x8BFB;<span></span></span></em></h3>
-<p>&#x8868;&#x793A;&#x56FE;&#x50CF;&#x4E2D;&#x7684;&#x9009;&#x62E9;&#x7684;&#x4E66;&#x7B7E;&#x3002;bookmark2 &#x5BF9;&#x8C61;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_range.html#method-createBookmark2" target="_blank">CKEDITOR.dom.range.createBookmark2</a>&#x4EE5;&#x8FDB;&#x884C;&#x5B9A;&#x4E49;&#x3002;</p>
-<h3 id="contents--string---&#xA0;&#xA0;&#xA0;&#xA0;&#x53EA;&#x8BFB;">contents : String   &#xA0;&#xA0;&#xA0;&#xA0;<em><span style="border:1px solid #999">&#x53EA;&#x8BFB;<span></span></span></em></h3>
-<p>&#x7F16;&#x8F91;&#x5185;&#x5BB9;&#x3002;</p>
-<h2 id="&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5;</h2>
-<h3 id="constructor-editor--contentsonly---&#x2192;-image">constructor( editor, [ contentsOnly ] ) &#x2192; Image</h3>
-<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Image&#x7C7B;&#x5B9E;&#x4F8B;&#x3002;</p>
-<h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
-<p>&#xA0;&#xA0;&#xA0;&#xA0;<strong>editor</strong> :<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_editor.html" target="_blank">editor</a></p>
-<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x5728;&#x5176;&#x4E0A;&#x521B;&#x5EFA;&#x56FE;&#x50CF;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x5B9E;&#x4F8B;&#x3002;</p>
-<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>[contentsOnly]</strong>&#xFF1A;Boolean</p>
-<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;true&#xFF0C;&#x56FE;&#x50CF;&#x5C06;&#x53EA;&#x5305;&#x542B;&#x6CA1;&#x6709;&#x9009;&#x62E9;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
-<h4 id="&#x8FD4;&#x56DE;">&#x8FD4;&#x56DE;</h4>
-<p>&#xA0;&#xA0;&#xA0;&#xA0;<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_plugins_undo_Image.html" target="_blank">Image&#x7C7B;</a></p>
-<h3 id="equalscontent-otherimage--&#x2192;-boolean">equalsContent( otherImage ) &#x2192; Boolean</h3>
-<pre><code>  Image.equalsContent( otherImage )
-</code></pre><h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
-<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>otherImage</strong> : <a href="image.html">Image</a></p>
-<p>  &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x8981;&#x6BD4;&#x8F83;&#x7684; Image</p>
-<h4 id="&#x8FD4;&#x56DE;">&#x8FD4;&#x56DE;</h4>
-<p>&#xA0;&#xA0;&#xA0;&#xA0; Boolean</p>
-<p>  &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x5982;&#x679C;<code>otherImage</code>&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;<code>true</code>&#x3002;</p>
-<h3 id="equalsselection-otherimage--&#x2192;-boolean">equalsSelection( otherImage ) &#x2192; Boolean</h3>
-<h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
-<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>otherImage</strong> : <a href="image.html">Image</a></p>
-<p>  &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x8981;&#x6BD4;&#x8F83;&#x7684; Image</p>
-<h4 id="&#x8FD4;&#x56DE;">&#x8FD4;&#x56DE;</h4>
-<p>&#xA0;&#xA0;&#xA0;&#xA0; Boolean
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x5982;&#x679C;<code>otherImage</code>&#x4E2D;&#x7684;&#x9009;&#x62E9;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;<code>true</code>&#x3002;</p>
+<h3 id="limit--number-&#xA0;&#xA0;&#xA0;&#xA0;&#x53EA;&#x8BFB;">limit : Number &#xA0;&#xA0;&#xA0;&#xA0;<em><span style="font-size:12px;font-width:100; border:1px solid #999">&#x53EA;&#x8BFB;<span></span></span></em></h3>
+<p>&#x5806;&#x6808;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x5FEB;&#x7167;&#x6570;&#x91CF;&#x3002; &#x901A;&#x8FC7;<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_config.html#cfg-undoStackSize" target="_blank">CKEDITOR.config.undoStackSize</a>&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x3002;</p>
+<p><hr></p>
+<h3 id="locked--object--&#xA0;&#xA0;&#xA0;&#xA0;&#x53EA;&#x8BFB;">locked : Object  &#xA0;&#xA0;&#xA0;&#xA0;<em><span style="font-size:12px;font-width:100; border:1px solid #999">&#x53EA;&#x8BFB;<span></span></span></em></h3>
+<p>&#x5F53;&#x9501;&#x5B9A;&#x5C5E;&#x6027;&#x4E0D;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x64A4;&#x9500;&#x7BA1;&#x7406;&#x5668;&#x88AB;&#x9501;&#x5B9A;&#xFF0C;&#x56E0;&#x6B64;&#x7981;&#x6B62;&#x4FDD;&#x5B58;&#x6216;&#x66F4;&#x65B0;&#x7B49;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x7BA1;&#x7406;&#x5458;&#x53EF;&#x4EE5;&#x5206;&#x522B;&#x901A;&#x8FC7;<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_plugins_undo_UndoManager.html#method-lock" target="_blank">&#x9501;&#x5B9A;</a>&#x548C;<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_plugins_undo_UndoManager.html#method-unlock" target="_blank">&#x89E3;&#x9501;</a>&#x65B9;&#x6CD5;&#x9501;&#x5B9A;&#x548C;&#x89E3;&#x9501;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x4E3A;<code>null</code></p>
+<p><hr></p>
+<h3 id="previouskeygroup--number--&#xA0;&#xA0;&#xA0;&#xA0;&#x53EA;&#x8BFB;">previousKeyGroup : Number  &#xA0;&#xA0;&#xA0;&#xA0;<em><span style="font-size:12px;font-width:100; border:1px solid #999">&#x53EA;&#x8BFB;<span></span></span></em></h3>
+<p>&#x5305;&#x542B;&#x57FA;&#x4E8E;keyGroups&#x7684;&#x5148;&#x524D;&#x5904;&#x7406;&#x7684;<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_plugins_undo_UndoManager.html#static-property-keyGroups" target="_blank">&#x5BC6;&#x94A5;&#x7EC4;</a>&#x3002; <code>-1</code> &#x8868;&#x793A;&#x4E00;&#x4E2A;&#x672A;&#x77E5;&#x7EC4;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x4E3A; <code>-1</code></p>
+<h3 id="strokeslimit--number--&#xA0;&#xA0;&#xA0;&#xA0;&#x53EA;&#x8BFB;">strokesLimit : Number  &#xA0;&#xA0;&#xA0;&#xA0;<em><span style="font-size:12px;font-width:100; border:1px solid #999">&#x53EA;&#x8BFB;<span></span></span></em></h3>
+<p>&#x5728;&#x4E00;&#x4E2A;&#x64A4;&#x6D88;&#x6B65;&#x9AA4;&#x4E2D;&#x952E;&#x5165;/&#x5220;&#x9664;&#x7684;&#x6700;&#x5927;&#x5B57;&#x7B26;&#x6570;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x4E3A; <code>25</code></p>
+<p><hr></p>
+<h3 id="strokesrecorded--array-&#xA0;&#xA0;&#xA0;&#xA0;&#x53EA;&#x8BFB;">strokesRecorded : Array &#xA0;&#xA0;&#xA0;&#xA0;<em><span style="font-size:12px;font-width:100; border:1px solid #999">&#x53EA;&#x8BFB;<span></span></span></em></h3>
+<p>&#x5B58;&#x50A8;&#x6309;&#x952E;&#x6B21;&#x6570;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x8FDE;&#x7EED;&#x8BA1;&#x6570;&#x3002; &#x4F7F;&#x7528;<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_plugins_undo_UndoManager.html#static-property-keyGroups" target="_blank">keyGroups</a>&#x6210;&#x5458;&#x4F5C;&#x4E3A;&#x7D22;&#x5F15;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x6309;&#x952E;&#x8BA1;&#x6570;&#x5C06;&#x5728;&#x8FBE;&#x5230;&#x6BCF;&#x4E2A;&#x5FEB;&#x7167;&#x7684;&#x5B57;&#x7B26;&#x6570;&#x9650;&#x5236;&#x540E;&#x91CD;&#x7F6E;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x4E3A; <code>[0&#xFF0C;0]</code></p>
 
                                 
                                 </section>
@@ -309,14 +297,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: plugins">
+                <a href="image.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: undo.image">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="UndoManager.html" class="navigation navigation-next " aria-label="Next page: undo.UndoManager">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -325,7 +309,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"undo.image","level":"1.2.1.2.1","depth":4,"next":{"title":"undo.UndoManager","level":"1.2.1.2.2","depth":4,"path":"api/plugins/undo/UndoManager.md","ref":"api/plugins/undo/UndoManager.md","articles":[]},"previous":{"title":"plugins","level":"1.2.1.2","depth":3,"path":"api/plugins/README.md","ref":"api/plugins/README.md","articles":[{"title":"undo.image","level":"1.2.1.2.1","depth":4,"path":"api/plugins/undo/image.md","ref":"api/plugins/undo/image.md","articles":[]},{"title":"undo.UndoManager","level":"1.2.1.2.2","depth":4,"path":"api/plugins/undo/UndoManager.md","ref":"api/plugins/undo/UndoManager.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"ck":"ckeditor","one":"&nbsp;&nbsp;&nbsp;&nbsp;","tow":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","thre":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"},"language":"zh-cn","gitbook":">=3.2.0","description":"ckeditor chinese doc"},"file":{"path":"api/plugins/undo/image.md","mtime":"2018-06-06T04:29:01.547Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-06T04:41:04.636Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"undo.UndoManager","level":"1.2.1.2.2","depth":4,"previous":{"title":"undo.image","level":"1.2.1.2.1","depth":4,"path":"api/plugins/undo/image.md","ref":"api/plugins/undo/image.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"ck":"ckeditor","one":"&nbsp;&nbsp;&nbsp;&nbsp;","tow":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","thre":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"},"language":"zh-cn","gitbook":">=3.2.0","description":"ckeditor chinese doc"},"file":{"path":"api/plugins/undo/UndoManager.md","mtime":"2018-06-06T04:40:53.901Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-06T04:41:04.636Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
