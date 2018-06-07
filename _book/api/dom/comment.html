@@ -177,6 +177,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.1.2.2" data-path="../plugins/undo/UndoManager.html">
+            
+                <a href="../plugins/undo/UndoManager.html">
+            
+                    
+                    undo.UndoManager
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -307,9 +320,59 @@ strong.appendTo( p );
 <p>  &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x4E8B;&#x4EF6;&#x540D;&#x79F0;</p>
 <p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>meta</strong> : Object</p>
 <p>  &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x5C5E;&#x6027;</p>
-<p>  &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; [ errorProof ]</p>
+<p>  &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <strong>[ errorProof ]</strong></p>
 <p>  &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;  &#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x662F;&#x5426;&#x5E94;&#x8BE5;&#x6355;&#x83B7;&#x6BCF;&#x4E2A;&#x4FA6;&#x542C;&#x5668;&#x8C03;&#x7528;&#x5F15;&#x53D1;&#x7684;&#x9519;&#x8BEF;&#x3002;</p>
 <p>  &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x9ED8;&#x8BA4;&#x4E3A; <code>false</code></p>
+<p><hr></p>
+<h3 id="equals-object--&#x2192;-boolean">equals( object ) &#x2192; Boolean</h3>
+<p>&#x786E;&#x5B9A;&#x6307;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x7B49;&#x4E8E;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>    var doc = new CKEDITOR.dom.document( document );
+    alert( doc.equals( CKEDITOR.document ) );   // true
+    alert( doc == CKEDITOR.document );          // false
+</code></pre><h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
+<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>object</strong> : Object</p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x8981;&#x4E0E;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<h4 id="&#x8FD4;&#x56DE;">&#x8FD4;&#x56DE;</h4>
+<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>Boolean</strong> </p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;  &#x5982;&#x679C;&#x5BF9;&#x8C61;&#x76F8;&#x7B49;&#x8FD4;&#x56DE; <code>true</code>&#x3002;</p>
+<p><hr></p>
+<h3 id="fire-eventname--data---editor---&#x2192;-boolean--object">fire( eventName, [ data ], [ editor ] ) &#x2192; Boolean | Object</h3>
+<p>&#x89E6;&#x53D1;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x7279;&#x5B9A;&#x4E8B;&#x4EF6;&#x3002;&#x6B64;&#x65F6;&#x8C03;&#x7528;&#x6240;&#x6709;&#x5DF2;&#x6CE8;&#x518C;&#x7684;&#x4FA6;&#x542C;&#x5668;&#x3002;</p>
+<pre><code>  someObject.on( &apos;someEvent&apos;, function() { ... } );
+  someObject.on( &apos;someEvent&apos;, function() { ... } );
+  someObject.fire( &apos;someEvent&apos; );             // Both listeners are called.
+
+  someObject.on( &apos;someEvent&apos;, function( event ) {
+      alert( event.data );                    // &apos;Example&apos;
+  } );
+  someObject.fire( &apos;someEvent&apos;, &apos;Example&apos; );
+</code></pre><h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
+<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>eventName</strong> : String</p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x8981;&#x89E6;&#x53D1;&#x7684;&#x4E8B;&#x4EF6;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>[ data ]</strong> : Object</p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x6570;&#x636E;&#x5728;&#x8C03;&#x7528;&#x4FA6;&#x542C;&#x5668;&#x65F6;&#x4F5C;&#x4E3A;<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html#property-data" target="_blank">CKEDITOR.eventInfo.data</a>&#x53D1;&#x9001; &#x3002;</p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>[ editor ]</strong> : editor</p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x8C03;&#x7528;&#x4FA6;&#x542C;&#x5668;&#x65F6;&#x4F5C;&#x4E3A;<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html#property-editor" target="_blank">CKEDITOR.eventInfo.editor</a>&#x53D1;&#x9001;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x5B9E;&#x4F8B; &#x3002;</p>
+<h4 id="&#x8FD4;&#x56DE;">&#x8FD4;&#x56DE;</h4>
+<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>Boolean | Object</strong></p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x6307;&#x793A;&#x4E8B;&#x4EF6;&#x5C06;&#x88AB;&#x53D6;&#x6D88;&#x7684;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x6216;&#x7531;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4FA6;&#x542C;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p><hr></p>
+<h3 id="fireonce-eventname--data---editor---&#x2192;-boolean--object">fireOnce( eventName, [ data ], [ editor ] ) &#x2192; Boolean | Object</h3>
+<p>&#x89E6;&#x53D1;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x7279;&#x5B9A;&#x4E8B;&#x4EF6;&#xFF0C;&#x91CA;&#x653E;&#x4FE1;&#x53F7;&#x5230;&#x8BE5;&#x4E8B;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x4FA6;&#x542C;&#x5668;&#x3002;&#x4E0D;&#x80FD;&#x518D;&#x6B21;&#x8C03;&#x7528;&#x6B21;&#x7279;&#x5B9A;&#x4E8B;&#x4EF6;</p>
+<pre><code>  someObject.on( &apos;someEvent&apos;, function() { ... } );
+  someObject.fire( &apos;someEvent&apos; );         // Above listener called.
+  someObject.fireOnce( &apos;someEvent&apos; );     // Above listener called.
+  someObject.fire( &apos;someEvent&apos; );         // No listeners called.
+</code></pre><h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
+<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>eventName</strong> : String</p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x8981;&#x89E6;&#x53D1;&#x7684;&#x4E8B;&#x4EF6;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>[ data ]</strong> : Object</p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x6570;&#x636E;&#x5728;&#x8C03;&#x7528;&#x4FA6;&#x542C;&#x5668;&#x65F6;&#x4F5C;&#x4E3A;<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html#property-data" target="_blank">CKEDITOR.eventInfo.data</a>&#x53D1;&#x9001; &#x3002;</p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>[ editor ]</strong> : editor</p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#x8C03;&#x7528;&#x4FA6;&#x542C;&#x5668;&#x65F6;&#x4F5C;&#x4E3A;<a href="https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html#property-editor" target="_blank">CKEDITOR.eventInfo.editor</a>&#x53D1;&#x9001;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x5B9E;&#x4F8B; &#x3002;</p>
+<h4 id="&#x8FD4;&#x56DE;">&#x8FD4;&#x56DE;</h4>
+<p>&#xA0;&#xA0;&#xA0;&#xA0; <strong>Boolean | Object</strong></p>
+<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x6307;&#x793A;&#x4E8B;&#x4EF6;&#x5C06;&#x88AB;&#x53D6;&#x6D88;&#x7684;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x6216;&#x7531;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4FA6;&#x542C;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x3002;</p>
 
                                 
                                 </section>
@@ -353,7 +416,7 @@ strong.appendTo( p );
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"comment / 注释","level":"1.2.1.1.1","depth":4,"next":{"title":"plugins","level":"1.2.1.2","depth":3,"path":"api/plugins/README.md","ref":"api/plugins/README.md","articles":[{"title":"undo.image","level":"1.2.1.2.1","depth":4,"path":"api/plugins/undo/image.md","ref":"api/plugins/undo/image.md","articles":[]}]},"previous":{"title":"dom","level":"1.2.1.1","depth":3,"path":"api/dom/README.md","ref":"api/dom/README.md","articles":[{"title":"comment / 注释","level":"1.2.1.1.1","depth":4,"path":"api/dom/comment.md","ref":"api/dom/comment.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"ck":"ckeditor","one":"&nbsp;&nbsp;&nbsp;&nbsp;","tow":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","thre":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"},"language":"zh-cn","gitbook":">=3.2.0","description":"ckeditor chinese doc"},"file":{"path":"api/dom/comment.md","mtime":"2018-06-02T14:18:17.436Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-02T15:13:15.339Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"comment / 注释","level":"1.2.1.1.1","depth":4,"next":{"title":"plugins","level":"1.2.1.2","depth":3,"path":"api/plugins/README.md","ref":"api/plugins/README.md","articles":[{"title":"undo.image","level":"1.2.1.2.1","depth":4,"path":"api/plugins/undo/image.md","ref":"api/plugins/undo/image.md","articles":[]},{"title":"undo.UndoManager","level":"1.2.1.2.2","depth":4,"path":"api/plugins/undo/UndoManager.md","ref":"api/plugins/undo/UndoManager.md","articles":[]}]},"previous":{"title":"dom","level":"1.2.1.1","depth":3,"path":"api/dom/README.md","ref":"api/dom/README.md","articles":[{"title":"comment / 注释","level":"1.2.1.1.1","depth":4,"path":"api/dom/comment.md","ref":"api/dom/comment.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"ck":"ckeditor","one":"&nbsp;&nbsp;&nbsp;&nbsp;","tow":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","thre":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"},"language":"zh-cn","gitbook":">=3.2.0","description":"ckeditor chinese doc"},"file":{"path":"api/dom/comment.md","mtime":"2018-06-06T04:29:01.538Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-07T08:42:01.828Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
