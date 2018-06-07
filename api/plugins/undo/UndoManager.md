@@ -29,3 +29,23 @@
 **注意**：按键计数将在达到每个快照的字符数限制后重置。
 
 默认为 `[0，0]`
+
+## 静态属性
+### keyGroups : Object {{book.one}}*<span style="font-size:12px;font-width:100; border:1px solid #999">只读<span>*
+密钥组标识符映射。 用于访问[strokesRecorded](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_plugins_undo_UndoManager.html#property-strokesRecorded)中的成员。
+
+FUNCTIONAL  - 退格键/删除键的标识符。
+
+PRINTABLE  - 打印键的标识符。
+
+**用法示例：**
+
+      undoManager.strokesRecorded[ undoManager.keyGroups.FUNCTIONAL ];
+
+默认为 ` {PRINTABLE: 0, FUNCTIONAL: 1}`
+<hr>
+### navigationKeyCodes : Object  {{book.one}}*<span style="font-size:12px;font-width:100; border:1px solid #999">只读<span>*
+
+导航键的代码，如箭头，Page Up / Down等。由[isNavigationKey](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_plugins_undo_UndoManager.html#static-method-isNavigationKey)方法使用。
+
+默认为 `{37: 1, 38: 1, 39: 1, 40: 1, 36: 1, 35: 1, 33: 1, 34: 1}`
