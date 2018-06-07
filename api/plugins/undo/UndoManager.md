@@ -75,7 +75,7 @@ PRINTABLE  - 打印键的标识符。
 #### 参数
 {{book.one}} **keyCode**: Number
 #### 返回值
-{{book.one}} Boolean
+{{book.one}} **Boolean**
 <hr>
 ### lock( [ dontUpdate ], [ forceUpdate ] )
 锁定快照堆栈以防止任何保存/更新操作，并且在需要时，在锁定期间内调用[unlock](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_plugins_undo_UndoManager.html#method-unlock)方法后，使用DOM更改更新快照堆栈的提示。
@@ -99,7 +99,7 @@ PRINTABLE  - 打印键的标识符。
 ### redoable() → Boolean
 检查当前的重做状态。
 #### 返回值
-{{book.one}} Boolean
+{{book.one}} **Boolean**
 
 {{book.tow}} 文档状态
 <hr>
@@ -175,6 +175,33 @@ Unlocks the snapshot stack and checks to amend the last snapshot.
 
   {{book.tow}} 带有新选择的新快照。
 #### 返回
-{{book.one}} Boolean
+{{book.one}} **Boolean**
 
   {{book.tow}} 如果选择被修改，则返回`true`。
+## 静态方法
+### getKeyGroup( keyCode ) → Number
+返回传递的keyCode所属的组。
+#### 参数
+{{book.one}} **keyCode** : Number
+#### 返回
+{{book.one}} **Number**
+<hr>
+### getOppositeKeyGroup( keyGroup ) → Number
+#### 参数
+{{book.one}}  **keyGroup** : Number
+#### 返回
+{{book.one}} **Number**
+<hr>
+### ieFunctionalKeysBug( keyCode ) → Boolean
+我们是否需要在此环境中针对功能（退格键，删除键）不使用Internet Explorer中的按键事件以及指定的keyCode使用解决方法。
+#### 参数
+{{book.one}}  **keyCodey** : Number
+#### 返回
+{{book.one}} **Number**
+<hr>
+### isNavigationKey( keyCode ) → Boolean
+检查一个键是否是导航键之一（箭头，页面向上/向下等）。 另请参阅[navigationKeyCodes](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_plugins_undo_UndoManager.html#static-property-navigationKeyCodes)属性。
+#### 参数
+{{book.one}}  **keyCodey** : Number
+#### 返回
+{{book.one}} **Number**
