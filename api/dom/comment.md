@@ -190,3 +190,157 @@ comment
 {{book.one}} **Boolean | Object**
 
 {{book.tow}}指示事件将被取消的布尔值，或由其中一个侦听器返回的数据。
+<hr>
+### getAddress( [ normalized ] ) → Array
+为此节点检索唯一可识别的树地址。 返回的树地址是一个整数数组，每个整数指示一个DOM节点的子索引，从document.documentElement开始。
+
+例如，假设<body>是<html>（<head>是第一个）的第二个孩子，并且我们想要解释第三个孩子在<body>的第四个孩子下，返回的树地址是：[ 1,3,2]。
+
+一旦DOM树结构被修改，树地址就不能用于找回DOM树节点。
+#### 参数
+{{book.one}} **[ normalized ]** : Boolean
+
+  {{book.tow}} 请参阅 [getIndex](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html#method-getIndex)。
+  
+  {{book.tow}} 默认为 `false`
+#### 返回
+{{book.one}} **数组**
+
+{{book.tow}} 地址
+<hr>
+### getAscendant( query, [ includeSelf ] ) → node
+获取此节点的最近的祖先节点，由其名称或使用评估函数指定。
+
+      // Suppose we have the following HTML structure:
+      // <div id="outer"><div id="inner"><p><b>Some text</b></p></div></div>
+      // If node == <b>
+      ascendant = node.getAscendant( 'div' );             // ascendant == <div id="inner">
+      ascendant = node.getAscendant( 'b' );               // ascendant == null
+      ascendant = node.getAscendant( 'b', true );         // ascendant == <b>
+      ascendant = node.getAscendant( { div:1, p:1 } );    // Searches for the first 'div' or 'p': ascendant == <div id="inner">
+
+      // Using custom evaluator:
+      ascendant = node.getAscendant( function( el ) {
+          return el.getId() == 'inner';
+      } );
+      // ascendant == <div id="inner">
+
+#### 参数
+{{book.one}} **query**: String | Function | Object
+
+  {{book.tow}} 要搜索的祖先节点的名称或具有要搜索的节点名称的对象或评估程序函数。
+
+{{book.one}} **[ includeSelf ]** : Boolean
+
+  {{book.tow}} 是否在搜索中包含当前节点。
+
+#### 返回值
+{{book.one}} [node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)
+
+  {{book.tow}} 找到的祖先节点，如果未找到，则返回null。
+<hr>
+### getCommonAncestor( node )
+得到共同的祖先
+#### 参数
+{{book.one}} **node** : Object
+<hr>
+### getCustomData( key ) → Object
+获取设置到此对象中的数据插槽的值。
+
+      var element = new CKEDITOR.dom.element( 'span' );
+      alert( element.getCustomData( 'hasCustomData' ) );      // e.g. 'true'
+      alert( element.getCustomData( 'nonExistingKey' ) );     // null
+
+#### 参数
+{{book.one}} **key** : String
+
+{{book.tow}} 用于识别数据插槽的密钥。
+#### 返回值
+{{book.one}} **Object**
+
+{{book.tow}} 该值设置为数据插槽。
+<hr>
+### getDocument() → document
+获取包含此元素的document。
+
+      var element = CKEDITOR.document.getById( 'example' );
+      alert( element.getDocument().equals( CKEDITOR.document ) ); // true
+
+#### 返回值
+{{book.one}} **[document](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_document.html)**
+
+{{book.tow}} document元素
+<hr>
+### getIndex( normalized ) → Number
+获取parent.childNodes数组中某个节点的索引。 如果节点没有父节点，或者当规范化参数设置为true并且文本节点为空并且在规范化过程中将被删除，则返回-1。
+
+让我们假设有以下childNodes数组：
+
+      [ emptyText, element1, text, text, element2, emptyText2 ]
+
+      emptyText.getIndex()            // 0
+      emptyText.getIndex( true )      // -1
+      element1.getIndex();            // 1
+      element1.getIndex( true );      // 0
+      element2.getIndex();            // 4
+      element2.getIndex( true );      // 2
+      emptyText2.getIndex();          // 5
+      emptyText2.getIndex( true );    // -1
+
+#### 参数
+{{book.one}} **normalized** : Boolean
+
+{{book.tow}} 如果为`true`，则会合并相邻的文本节点，并删除空的文本节点。
+#### 返回值
+{{book.one}} **Number**
+
+{{book.tow}} 索引节点或-1，如果一个节点没有父节点或在规范化过程中被删除。
+<hr>
+### getNext( [ evaluator ] ) → node
+获取其父级子级列表中此元素后面的节点。
+
+      var element = CKEDITOR.dom.element.createFromHtml( '<div><b>Example</b><i>next</i></div>' );
+      var last = element.getFirst().getNext();
+      alert( last.getName() ); // 'i'
+
+#### 参数
+{{book.one}} **[ evaluator ]** : Function
+
+{{book.tow}} Filtering the result node.
+#### 返回值
+{{book.one}} [node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)
+
+{{book.tow}} 下一个节点，如果不可用，则返回null。
+<hr>
+### getNextSourceNode( startFromSibling, nodeType, guard )
+#### 参数
+{{book.one}} **startFromSibling** : Object
+
+{{book.one}} **nodeType** : Object
+
+{{book.one}} **guard** : Object
+<hr>
+### getOuterHtml() → String
+获取此评论的外部HTML。
+#### 返回值
+{{book.one}} **String**
+
+{{book.tow}} HTML <!-- comment value -->.
+<hr>
+### getParent( [ allowFragmentParent ] ) → element
+获取此节点的父元素。
+
+      var node = editor.document.getBody().getFirst();
+      var parent = node.getParent();
+      alert( parent.getName() ); // 'body'
+      
+#### 参数
+{{book.one}} **[ allowFragmentParent ]** : Boolean
+
+{{book.tow}} 参考 [CKEDITOR.NODE_DOCUMENT_FRAGMENT](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#property-NODE_DOCUMENT_FRAGMENT)片段类型的父节点。
+
+{{book.tow}} 默认为 `false`
+#### 返回值
+{{book.one}} **[element](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_element.html)**
+
+{{book.tow}} 父节点
