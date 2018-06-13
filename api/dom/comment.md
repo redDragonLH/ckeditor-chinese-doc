@@ -344,3 +344,43 @@ comment
 {{book.one}} **[element](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_element.html)**
 
 {{book.tow}} 父节点
+<hr>
+### getParents( [ closerFirst ] ) → Array
+返回包含节点父节点和节点本身的数组。 默认情况下，节点按降序排列。
+#### 参数
+{{book.one}} **[ closerFirst ]** : Boolean
+
+  {{book.tow}} 确定返回的节点的顺序。
+  
+  {{book.tow}} 默认为`false`
+#### 返回值
+{{book.one}} **Array**
+
+  {{book.tow}} 返回包含[CKEDITOR.dom.node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)的数组
+<hr>
+### getPosition( otherNode ) → Number
+确定此节点与文档中给定的[CKEDITOR.dom.node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)之间的位置关系。 该节点可以在给定节点之前（[CKEDITOR.POSITION_PRECEDING](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#property-POSITION_PRECEDING)）或跟随（[CKEDITOR.POSITION_FOLLOWING](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#property-POSITION_FOLLOWING)）。 该节点还可以包含（[CKEDITOR.POSITION_CONTAINS](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#property-POSITION_CONTAINS)）或由（[CKEDITOR.POSITION_IS_CONTAINED](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#property-POSITION_IS_CONTAINED)）包含给定节点。 如果给定节点与此节点相同，该函数将返回上面列出的常量或[CKEDITOR.POSITION_IDENTICAL](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR.html#property-POSITION_IDENTICAL)的位掩码。
+#### 参数
+{{book.one}} **otherNode** : [node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)
+
+{{book.tow}} 用来检查关系的节点。
+#### 返回值
+{{book.one}} **Number**
+
+{{book.tow}} 该节点和给定节点之间的位置关系。
+<hr>
+### getPrevious( [ evaluator ] ) → node
+获取其父级子列表中此元素之前的节点。
+
+      var element = CKEDITOR.dom.element.createFromHtml( '<div><i>prev</i><b>Example</b></div>' );
+      var first = element.getLast().getPrev();
+      alert( first.getName() ); // 'i'
+      
+#### 参数
+{{book.one}} **[ evaluator ]** : Function
+
+  {{book.tow}}过滤结果节点。
+#### 返回值
+{{book.one}} [node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)
+
+  {{book.tow}} 前一个节点，如果不可用，则返回null。
