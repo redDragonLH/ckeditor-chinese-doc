@@ -434,4 +434,74 @@ comment
 {{book.one}} **eventName** : string
 
 {{book.tow}} 事件名称
+#### 返回值
+{{book.one}} **Boolean**
+<hr>
+### hasNext() → Boolean
+检查节点之后有没有任何兄弟节点
+#### 返回值
+{{book.one}} **Boolean**
+<hr>
+### hasPrevious() → Boolean
+检查节点之前有没有任何兄弟节点
+#### 返回值
+{{book.one}} **Boolean**
+<hr>
+### insertAfter( node ) → node
+在元素之前插入此节点。
+
+        var em = new CKEDITOR.dom.element( 'em' );
+        var strong = new CKEDITOR.dom.element( 'strong' );
+        strong.insertAfter( em );
+
+        // Result: '<em></em><strong></strong>'
+
+#### 参数
+{{book.one}} **node** : [node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)
+
+{{book.tow}} 需要插在元素之前的节点
+#### 返回值
+{{book.one}}**[node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)**
+
+{{book.tow}} 插入之后的节点在此之前。
+<hr>
+### insertBefore( node ) → node
+在元素之后插入节点
+
+      var em = new CKEDITOR.dom.element( 'em' );
+      var strong = new CKEDITOR.dom.element( 'strong' );
+      strong.insertBefore( em );
+
+      // result: '<strong></strong><em></em>'
+
+#### 参数
+{{book.one}} **[node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)**
+
+{{book.tow}} 要插入元素之后的节点
+#### 返回值
+{{book.one}}**[node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)**
+
+{{book.tow}} 插入的节点
+<hr>
+### insertBeforeMe( node ) → node
+在此节点之前插入一个节点。
+#### 参数
+{{book.one}}**[node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)**
+
+{{book.tow}} 需要插入的节点
+#### 返回值
+{{book.one}}**[node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)**
+
+{{book.tow}} 插入的节点
+<hr>
+### isReadOnly( [ checkOnlyAttributes ] ) → Boolean
+检查节点是否只读（不应该被改变）。
+
+        // For the following HTML:
+        // <b>foo</b><div contenteditable="false"><i>bar</i></div>
+
+        elB.isReadOnly(); // -> false
+        foo.isReadOnly(); // -> false
+        elDiv.isReadOnly(); // -> true
+        elI.isReadOnly(); // -> true
 
