@@ -505,3 +505,76 @@ comment
         elDiv.isReadOnly(); // -> true
         elI.isReadOnly(); // -> true
 
+此方法在两种模式下工作，具体取决于浏览器对element.isContentEditable属性的支持和checkOnlyAttributes参数的值。该element.isContentEditable检查是快，但已知的是，在发生故障或隐患分离的节点。此外，在处理一些分离的DOM树时，您可能希望模仿这在可编辑容器内发生（就像它会发生在CKEDITOR.editable中）。为此，您可以暂时将此树附加到具有该data-cke-editable属性的元素并使用该 checkOnlyAttributes模式。
+
+#### 参数
+{{book.one}} **[ checkOnlyAttributes ]** : Boolean
+
+{{book.tow}} 如果true仅检查属性，则不使用本机方法。此参数需要true检查隐藏或分离的元素。4.5中介绍。
+
+{{book.tow}} 默认为 `false`
+
+#### 返回
+{{book.one}} **Boolean**
+<hr>
+### ltrim() （啥都没写，等我看源码）
+<hr>
+### move( target, toStart ) （同上）
+
+#### 参数
+{{book.one}} **target** : Object
+
+{{book.one}} **toStart** : Object
+<hr>
+### on( eventName, listenerFunction, [ scopeObj ], [ listenerData ], [ priority ] ) → Object
+将侦听器注册到当前对象中的特定事件。
+
+      someObject.on( 'someEvent', function() {
+          alert( this == someObject );        // true
+      } );
+
+      someObject.on( 'someEvent', function() {
+          alert( this == anotherObject );     // true
+      }, anotherObject );
+
+      someObject.on( 'someEvent', function( event ) {
+          alert( event.listenerData );        // 'Example'
+      }, null, 'Example' );
+
+      someObject.on( 'someEvent', function() { ... } );                       // 2nd called
+      someObject.on( 'someEvent', function() { ... }, null, null, 100 );      // 3rd called
+      someObject.on( 'someEvent', function() { ... }, null, null, 1 );        // 1st called
+
+#### 参数
+{{book.one}} **eventName** : String
+
+{{book.tow}} 要监听的事件名称。
+
+{{book.one}} **listenerFunction** : Function
+
+{{book.tow}} 听取事件的功能。实例化的单个[CKEDITOR.eventInfo](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html)对象将传递给包含所有事件数据的此函数。
+
+{{book.one}} **[ scopeObj ]** : Object
+
+{{book.tow}} 用于调用侦听器调用（this对象）的对象。如果省略，则使用当前对象。
+
+{{book.one}} **[ listenerData ]** : Object
+
+{{book.tow}} 调用侦听器时要作为[CKEDITOR.eventInfo.listenerData](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_eventInfo.html#property-listenerData)发送的数据 。
+
+{{book.one}} **[ priority ]** : Number
+
+{{book.tow}} 听众优先。首先调用较低优先级的侦听器。具有相同优先级值的监听器将按注册顺序调用。
+
+{{book.tow}} 默认为 `10`
+
+#### 返回
+{{book.one}} **Object**
+
+{{book.tow}} 包含该removeListener 函数的对象，可用于随时删除侦听器。
+<hr>
+### once()
+
+Similiar与上，但听者只会在下一事件触发调用一次。
+
+[CKEDITOR.event.on](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_event.html#method-on)
