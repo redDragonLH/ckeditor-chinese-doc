@@ -578,3 +578,79 @@ comment
 Similiar与上，但听者只会在下一事件触发调用一次。
 
 [CKEDITOR.event.on](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_event.html#method-on)
+<hr>
+### remove( [ preserveChildren ] ) → node
+从文档DOM中删除此节点。
+
+      var element = CKEDITOR.document.getById( 'MyElement' );
+      element.remove();
+
+#### 参数
+{{book.one}} **[ preserveChildren ]** : Boolean
+
+{{book.tow}}指示子元素必须保留在文档中，仅删除外部标记。
+
+{{book.tow}} 默认 `false`
+
+#### 返回值
+{{book.one}} [node](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_node.html)
+
+{{book.tow}}  被删除的节点
+<hr>
+### removeAllListeners()
+删除此对象上设置的任何侦听器。
+
+为了避免内存泄漏，我们必须确保在不再需要对象后不再有引用。
+覆盖: [CKEDITOR.event.removeAllListeners](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_event.html#method-removeAllListeners)
+<hr>
+### removeCustomData( key ) → Object
+删除给定键内的值
+
+#### 参数
+{{book.one}} **key**: String
+
+#### 返回值
+{{book.one}} Object
+
+{{book.tow}} 被删除的值，如果未找到则返回`null`。
+<hr>
+### removeListener( eventName, listenerFunction )
+取消注册在指定事件处调用的侦听器函数。 如果先前未注册侦听器，则不会引发任何错误。
+
+      var myListener = function() { ... };
+      someObject.on( 'someEvent', myListener );
+      someObject.fire( 'someEvent' );                 // myListener called.
+      someObject.removeListener( 'someEvent', myListener );
+      someObject.fire( 'someEvent' );                 // myListener not called.
+
+#### 参数
+{{book.one}} **eventName** : String
+
+{{book.tow}} 需要取消注册的事件名称
+
+{{book.one}} **listenerFunction** : Function
+
+{{book.tow}} 侦听器功能注销
+<hr>
+### replace( nodeToReplace )
+#### 参数
+{{book.one}} **nodeToReplace** : Object
+<hr>
+### rtrim()
+<hr>
+### setCustomData( key, value ) → domObject
+设置此对象的键值。 这些值由指向同一DOM对象的所有实例共享。
+
+**注意**：只保证在这个唯一的DOM节点上可以使用创建的键，因此任何希望从其他元素克隆（由克隆节点或从innerHtml创建）继续访问它的任何愿望都将失败。 对于此类用法，请改用[CKEDITOR.dom.element.setAttribute](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_element.html#method-setAttribute)。
+
+**注意**：此方法不适用于Internet Explorer 9之前的文本节点。
+#### 参数
+{{book.one}} **key**: String
+
+{{book.tow}} 于标识 key 的密钥。
+
+{{book.one}} **value**: Object
+
+{{book.tow}} 插入 key 的数据
+<hr>
+### trim()
